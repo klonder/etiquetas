@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="script_crypt.js"></script>
+<style type="text/css">
+@font-face {
+	font-family: 'Helvetica';
+	src: url("fontes/Helvetica Condensed Regular.ttf") format('truetype');
+	font-weight:normal;
+}
+
+*, *:before, *:after {
+	margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+	
+#ajaxDISPLAY {
+	display: flex;
+	flex-direction: row;
+	flex-wrap:wrap;	
+}
+.geral {
+	position:relative;
+	font-size:0.7em;
+	font-family:Helvetica;
+	border:#CCC 1px solid;
+	margin-right:6px;
+	padding:2px;
+	width:243px;
+	height:178px;
+}
+
+.formula {
+	width:233px;
+	height:60px;
+	padding:4px;
+	border:#AAA 1px dotted;
+	font-size:0.9em
+}
+
+.nome {
+	display:inline;
+	font-size:1.1em;
+	font-weight:bold;
+}
+
+@media print {
+	*, *:before, *:after {
+		margin: 0;
+	    padding: 0;
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+	    background:none;
+	}
+	@page {
+		margin: 25px 20px 25px 25px;
+	}  
+	
+	#ajaxDISPLAY {
+		display: flex;
+		flex-direction: row;
+		flex-wrap:wrap;
+		justify-content: space-between;
+		margin-top:0;
+	}
+	.geral {
+		position:relative;
+		font-size:0.7em;
+		font-family:Helvetica;
+		border:0;
+		padding:4px;
+		width:243px;
+		height:178px;
+	}
+	.formula {
+		width:233px;
+		height:60px;
+		padding:4px;
+		border:#AAA 1px dotted;
+		font-size:0.9em
+	}
+	.nome {
+		display:inline;
+		font-size:1.1em;
+		font-weight:bold;
+	}
+	#divCab {
+		display: none;
+	}
+}	
+</style>
+</head>
+<body>
+	<div id="divCab" style="width:w-view; background:#DEDEDE; text-align:center; margin-bottom:10px;">
+		<textarea id="taDados" style="width:950px; height:500px; padding:5px;"></textarea>
+<br />Início: <input type="number" id="tfInicio" value="1" style="width:80px; font-size:1.3em" placeholder="Iniciar em"/>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button id="btnGerar" onclick="gerar()" style="width:180px; height:28px; font-size: 1.1em">Gerar etiquetas</button>
+	</div>
+		<div id="ajaxDISPLAY"></div>
+	</body>
+</html>
